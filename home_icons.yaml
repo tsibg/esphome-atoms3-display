@@ -1,0 +1,177 @@
+# Home Automation Icons - Material Icons Codepoints
+# Usage: !include home_icons.yaml
+
+# ============================================
+# LIGHTING
+# ============================================
+"Home": "\U0000e88a"              # home
+"Light On": "\U0000e0f0"          # lightbulb
+"Light Off": "\U0000e90f"         # lightbulb_outline
+"Lamp": "\U0000ef52"              # highlight_alt
+"Brightness": "\U0000e1ac"        # brightness_high
+
+# ============================================
+# CLIMATE CONTROL
+# ============================================
+"Thermometer": "\U0000e1ff"       # device_thermostat
+"Hot": "\U0000e80e"               # whatshot
+"Cold": "\U0000ebd3"              # severe_cold
+"Fan": "\U0000ec0c"               # wind_power
+"AC": "\U0000eb3b"                # ac_unit
+"Heater": "\U0000f076"            # thermostat
+
+# ============================================
+# WATER & WEATHER
+# ============================================
+"Water": "\U0000e798"             # water_drop
+"Rain": "\U0000e2bd"              # cloud
+"Sunny": "\U0000e430"             # wb_sunny
+"Moon": "\U0000ea46"              # nights_stay
+"Weather": "\U0000e42d"           # wb_cloudy
+
+# ============================================
+# POWER & ENERGY
+# ============================================
+"Power": "\U0000e63c"             # flash_on
+"Battery": "\U0000e1a4"           # battery_full
+"Battery Low": "\U0000e19c"       # battery_alert
+"Solar": "\U0000ec0f"             # solar_power
+
+# ============================================
+# SECURITY
+# ============================================
+"Lock": "\U0000e897"              # lock
+"Unlock": "\U0000e898"            # lock_open
+"Security": "\U0000e32a"          # security
+"Camera": "\U0000e3b0"            # camera_alt
+"Motion": "\U0000e566"            # directions_run
+"Alarm": "\U0000e855"             # alarm
+"Shield": "\U0000e9e0"            # shield
+
+# ============================================
+# DOORS & WINDOWS
+# ============================================
+"Door": "\U0000f1b5"              # sensor_door
+"Door Open": "\U0000eb4f"         # meeting_room
+"Window": "\U0000f088"            # window
+"Garage Door": "\U0000e885"       # garage (using for garage door)
+
+# ============================================
+# ROOMS
+# ============================================
+"Kitchen": "\U0000eb47"           # kitchen
+"Bedroom": "\U0000ea48"           # single_bed
+"Bathroom": "\U0000efdd"          # bathroom
+"Living Room": "\U0000e42a"       # view_comfortable
+"Office": "\U0000e8f9"            # work
+"Garage": "\U0000e885"            # garage (using image e885)
+
+# ============================================
+# FURNITURE & APPLIANCES  
+# ============================================
+"Chair": "\U0000efed"             # chair
+"Bed": "\U0000efdf"               # bed
+"TV": "\U0000e333"                # tv
+"Computer": "\U0000e30a"          # computer
+"Tablet": "\U0000e32f"            # tablet
+
+# ============================================
+# AUDIO & MEDIA
+# ============================================
+"Speaker": "\U0000e32d"           # speaker
+"Music": "\U0000e405"             # music_note
+"Volume": "\U0000e050"            # volume_up
+"Microphone": "\U0000e029"        # mic
+"Headphones": "\U0000e310"        # headset
+"Radio": "\U0000e03e"             # radio
+
+# ============================================
+# APPLIANCES
+# ============================================
+"Washer": "\U0000f1b1"            # wash
+"Dryer": "\U0000f1b3"             # dry
+"Coffee": "\U0000e541"            # local_cafe
+"Microwave": "\U0000f204"         # microwave
+"Fridge": "\U0000eb47"            # kitchen
+
+# ============================================
+# OUTDOOR
+# ============================================
+"Garden": "\U0000ea79"            # agriculture
+"Tree": "\U0000ea99"              # forest
+"BBQ": "\U0000ea47"               # outdoor_grill
+"Pool": "\U0000eb48"              # pool
+"Sprinkler": "\U0000e798"         # water_drop
+
+# ============================================
+# TRANSPORT
+# ============================================
+"Car": "\U0000e531"               # directions_car
+"Bike": "\U0000e52f"              # directions_bike
+"Bus": "\U0000e530"               # directions_bus
+"Train": "\U0000e570"             # train
+"Airplane": "\U0000e195"          # airplanemode_active
+
+# ============================================
+# CONNECTIVITY
+# ============================================
+"WiFi": "\U0000e63e"              # wifi
+"Bluetooth": "\U0000e1a7"         # bluetooth
+"Phone": "\U0000e0cd"             # phone
+"Network": "\U0000e80b"           # public
+"Cast": "\U0000e307"              # cast
+
+# ============================================
+# NOTIFICATIONS & ALERTS
+# ============================================
+"Notification": "\U0000e7f4"      # notifications
+"Alert": "\U0000e002"             # warning
+"Info": "\U0000e88e"              # info
+"Error": "\U0000e000"             # error
+
+# ============================================
+# ACTIONS & CONTROLS
+# ============================================
+"Play": "\U0000e037"              # play_arrow
+"Pause": "\U0000e034"             # pause
+"Stop": "\U0000e047"              # stop
+"Settings": "\U0000e8b8"          # settings
+"More": "\U0000e5d3"              # more_horiz
+"Check": "\U0000e5ca"             # check
+"Close": "\U0000e5cd"             # close
+"Add": "\U0000e145"               # add
+"Remove": "\U0000e15b"            # remove
+
+# ============================================
+# SENSORS
+# ============================================
+"Temperature": "\U0000e1ff"       # device_thermostat
+"Smoke": "\U0000eb4a"             # smoke_free
+"CO2": "\U0000e7b0"               # co2
+
+# ============================================
+# TIME & SCHEDULE
+# ============================================
+"Clock": "\U0000e924"             # watch_later
+"Timer": "\U0000e425"             # timer
+"Alarm Clock": "\U0000e855"       # alarm
+"Calendar": "\U0000e935"          # calendar_today
+"Schedule": "\U0000e8b5"          # schedule
+
+# ============================================
+# ENTERTAINMENT
+# ============================================
+"Gaming": "\U0000e30f"            # gamepad
+"Movie": "\U0000e02c"             # movie
+"Sports": "\U0000ea30"            # sports
+"Book": "\U0000e865"              # book
+"Photo": "\U0000e410"             # photo
+
+# ============================================
+# UTILITIES
+# ============================================
+"Trash": "\U0000e872"             # delete
+"Recycle": "\U0000e760"           # recycling
+"Filter": "\U0000e152"            # filter_list
+"Tools": "\U0000e869"             # build
+"Repair": "\U0000f100"            # home_repair_service

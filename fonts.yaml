@@ -1,0 +1,125 @@
+# Font definitions for AtomS3 Display
+# Main text font
+- file: "gfonts://Roboto"
+  id: my_font
+  size: 26
+
+# Material Design Icons font with specific glyphs
+# Note: Glyphs list MUST match all icons defined in home_icons.yaml
+- file: "gfonts://Material+Icons"
+  id: icon_font
+  size: 50
+  glyphs:
+    # Lighting
+    - "\U0000e88a"  # home
+    - "\U0000e0f0"  # lightbulb
+    - "\U0000e90f"  # lightbulb_outline
+    - "\U0000ef52"  # highlight_alt
+    - "\U0000e1ac"  # brightness_high
+    # Climate
+    - "\U0000e1ff"  # device_thermostat
+    - "\U0000e80e"  # whatshot
+    - "\U0000ebd3"  # severe_cold
+    - "\U0000ec0c"  # wind_power
+    - "\U0000eb3b"  # ac_unit
+    - "\U0000f076"  # thermostat (heater)
+    # Water & Weather
+    - "\U0000e798"  # water_drop
+    - "\U0000e430"  # wb_sunny
+    - "\U0000e2bd"  # cloud
+    - "\U0000ea46"  # nights_stay
+    - "\U0000e42d"  # wb_cloudy
+    # Power
+    - "\U0000e63c"  # flash_on
+    - "\U0000e1a4"  # battery_full
+    - "\U0000e19c"  # battery_alert
+    - "\U0000ec0f"  # solar_power
+    # Security
+    - "\U0000e897"  # lock
+    - "\U0000e898"  # lock_open
+    - "\U0000e32a"  # security
+    - "\U0000e3b0"  # camera_alt
+    - "\U0000e566"  # directions_run
+    - "\U0000e855"  # alarm
+    - "\U0000e9e0"  # shield
+    # Doors & Windows
+    - "\U0000f1b5"  # sensor_door
+    - "\U0000eb4f"  # meeting_room
+    - "\U0000f088"  # window
+    - "\U0000e885"  # garage
+    # Rooms
+    - "\U0000eb47"  # kitchen
+    - "\U0000ea48"  # single_bed
+    - "\U0000efdd"  # bathroom
+    - "\U0000e42a"  # view_comfortable
+    - "\U0000e8f9"  # work
+    # Furniture & Appliances
+    - "\U0000efed"  # chair
+    - "\U0000efdf"  # bed
+    - "\U0000e333"  # tv
+    - "\U0000e30a"  # computer
+    - "\U0000e32f"  # tablet
+    # Audio & Media
+    - "\U0000e32d"  # speaker
+    - "\U0000e405"  # music_note
+    - "\U0000e050"  # volume_up
+    - "\U0000e029"  # mic
+    - "\U0000e310"  # headset
+    - "\U0000e03e"  # radio
+    # Appliances
+    - "\U0000f1b1"  # wash
+    - "\U0000f1b3"  # dry
+    - "\U0000e541"  # local_cafe
+    - "\U0000f204"  # microwave
+    # Outdoor
+    - "\U0000ea79"  # agriculture
+    - "\U0000ea99"  # forest
+    - "\U0000ea47"  # outdoor_grill
+    - "\U0000eb48"  # pool
+    # Transport
+    - "\U0000e531"  # directions_car
+    - "\U0000e52f"  # directions_bike
+    - "\U0000e530"  # directions_bus
+    - "\U0000e570"  # train
+    - "\U0000e195"  # airplanemode_active
+    # Connectivity
+    - "\U0000e63e"  # wifi
+    - "\U0000e1a7"  # bluetooth
+    - "\U0000e0cd"  # phone
+    - "\U0000e80b"  # public
+    - "\U0000e307"  # cast
+    # Notifications
+    - "\U0000e7f4"  # notifications
+    - "\U0000e002"  # warning
+    - "\U0000e88e"  # info
+    - "\U0000e000"  # error
+    # Actions
+    - "\U0000e037"  # play_arrow
+    - "\U0000e034"  # pause
+    - "\U0000e047"  # stop
+    - "\U0000e8b8"  # settings
+    - "\U0000e5d3"  # more_horiz
+    - "\U0000e5ca"  # check
+    - "\U0000e5cd"  # close
+    - "\U0000e145"  # add
+    - "\U0000e15b"  # remove
+    # Sensors
+    - "\U0000eb4a"  # smoke_free
+    - "\U0000e7b0"  # co2
+    # Time
+    - "\U0000e924"  # watch_later
+    - "\U0000e425"  # timer
+    - "\U0000e935"  # calendar_today
+    - "\U0000e8b5"  # schedule
+    # Entertainment
+    - "\U0000e30f"  # gamepad
+    - "\U0000e02c"  # movie
+    - "\U0000ea30"  # sports
+    - "\U0000e865"  # book
+    - "\U0000e410"  # photo
+    # Utilities
+    - "\U0000e872"  # delete
+    - "\U0000e760"  # recycling
+    - "\U0000e152"  # filter_list
+    - "\U0000e869"  # build
+    - "\U0000f100"  # home_repair_service

@@ -1,0 +1,289 @@
+esphome:
+  name: my_atoms3
+  friendly_name: My AtomS3
+
+esp32:
+  board: m5stack-atoms3
+  framework:
+    type: arduino
+
+substitutions:
+  display_rotation: "270" # Set display rotation: 0, 90, 180, or 270
+  font_family: "gfonts://Roboto"
+  font_size: "26"
+  text_align: "TextAlign::CENTER"
+  text_x_position: "it.get_width() / 2"
+  text_y_position: "it.get_height() / 2 + 35"
+  icon_x_position: "it.get_width() / 2"
+  icon_y_position: "it.get_height() / 2 - 15"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  platform: esphome
+
+globals:
+  - id: bg_red
+    type: float
+    initial_value: '1.0'
+  - id: bg_green
+    type: float
+    initial_value: '1.0'
+  - id: bg_blue
+    type: float
+    initial_value: '1.0'
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+# Required for the display to communicate
+spi:
+  clk_pin: 17   # SCK -> G17
+  mosi_pin: 21  # MOSI -> G21
+
+# Load fonts
+font: !include fonts.yaml
+
+# Define the display
+display:
+  - platform: st7789v
+    id: display_1
+    model: CUSTOM
+    cs_pin: 15      # CS -> G15
+    dc_pin: 33      # DC/RS -> G33
+    reset_pin: 34   # RST -> G34 (note: some GPIO34 pins are input-only on some chips)
+    backlight_pin: 16 # LCD_BL -> G16
+    rotation: $display_rotation
+    width: 128
+    height: 128
+    offset_height: 3
+    offset_width: 1
+    lambda: |-
+      // Get friendly name from select and lookup unicode glyph from mapping
+      const char* icon_char = id(icon_map)[id(display_icon).state.c_str()].c_str();
+      
+      if (id(screen_colors).current_values.is_on()) {
+        // Light is ON -> Use the color from globals
+        auto bg_color = Color(id(bg_red) * 255, id(bg_green) * 255, id(bg_blue) * 255);
+        // Set text/icon color based on background brightness for contrast
+        auto fg_color = (id(bg_red) * 0.299 + id(bg_green) * 0.587 + id(bg_blue) * 0.114) > 0.5 ? Color(0, 0, 0) : Color(255, 255, 255);
+        it.fill(bg_color);
+        
+        // Draw icon
+        it.printf($icon_x_position, $icon_y_position, id(icon_font), fg_color, TextAlign::CENTER, "%s", icon_char);
+        
+        // Draw text
+        it.printf($text_x_position, $text_y_position, id(my_font), fg_color, $text_align, "%s", id(display_text).state.c_str());
+      } else {
+        // Light is OFF -> Black background, white text/icon
+        it.fill(Color(0, 0, 0));
+        
+        // Draw icon
+        it.printf($icon_x_position, $icon_y_position, id(icon_font), Color(255, 255, 255), TextAlign::CENTER, "%s", icon_char);
+        
+        // Draw text
+        it.printf($text_x_position, $text_y_position, id(my_font), Color(255, 255, 255), $text_align, "%s", id(display_text).state.c_str());
+      }
+
+# Built-in Button (on GPIO 41, which is the screen itself)
+binary_sensor:
+  - platform: gpio
+    pin: 
+      number: 41
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    name: "AtomS3 Button"
+    filters:
+      - delayed_on: 10ms
+      - delayed_off: 10ms
+    on_press:
+      then:
+        - logger.log: "Button Pressed!"
+        - light.toggle: screen_colors
+    on_release:
+      then:
+        - logger.log: "Button Released!"
+
+# Virtual outputs to connect the RGB light to our globals
+output:
+  - platform: template
+    id: red_output
+    type: float
+    write_action:
+      - lambda: |-
+          id(bg_red) = state;
+  - platform: template
+    id: green_output
+    type: float
+    write_action:
+      - lambda: |-
+          id(bg_green) = state;
+  - platform: template
+    id: blue_output
+    type: float
+    write_action:
+      - lambda: |-
+          id(bg_blue) = state;
+          id(display_1).update();
+
+# Virtual RGB light that controls the outputs
+light:
+  - platform: rgb
+    name: "Screen Colors"
+    id: screen_colors
+    red: red_output
+    green: green_output
+    blue: blue_output
+text:
+  - platform: template
+    name: "Display Text"
+    id: display_text
+    initial_value: "Hello!"
+    optimistic: true
+    mode: text
+    on_value:
+      then:
+        - component.update: display_1
+
+# Mapping component: Maps friendly names to unicode glyphs
+mapping:
+  - id: icon_map
+    from: string
+    to: string
+    entries: !include home_icons.yaml
+
+select:
+  - platform: template
+    name: "Display Icon"
+    id: display_icon
+    optimistic: true
+    initial_option: "Home"
+    options:
+      # Lighting
+      - "Home"
+      - "Light On"
+      - "Light Off"
+      - "Lamp"
+      - "Brightness"
+      # Climate
+      - "Thermometer"
+      - "Hot"
+      - "Cold"
+      - "Fan"
+      - "AC"
+      - "Heater"
+      # Water & Weather
+      - "Water"
+      - "Rain"
+      - "Sunny"
+      - "Moon"
+      - "Weather"
+      # Power
+      - "Power"
+      - "Battery"
+      - "Battery Low"
+      - "Solar"
+      # Security
+      - "Lock"
+      - "Unlock"
+      - "Security"
+      - "Camera"
+      - "Motion"
+      - "Alarm"
+      - "Shield"
+      # Doors & Windows
+      - "Door"
+      - "Door Open"
+      - "Window"
+      - "Garage Door"
+      # Rooms
+      - "Kitchen"
+      - "Bedroom"
+      - "Bathroom"
+      - "Living Room"
+      - "Office"
+      - "Garage"
+      # Furniture
+      - "Chair"
+      - "Bed"
+      - "TV"
+      - "Computer"
+      - "Tablet"
+      # Audio & Media
+      - "Speaker"
+      - "Music"
+      - "Volume"
+      - "Microphone"
+      - "Headphones"
+      - "Radio"
+      # Appliances
+      - "Washer"
+      - "Dryer"
+      - "Coffee"
+      - "Microwave"
+      - "Fridge"
+      # Outdoor
+      - "Garden"
+      - "Tree"
+      - "BBQ"
+      - "Pool"
+      - "Sprinkler"
+      # Transport
+      - "Car"
+      - "Bike"
+      - "Bus"
+      - "Train"
+      - "Airplane"
+      # Connectivity
+      - "WiFi"
+      - "Bluetooth"
+      - "Phone"
+      - "Network"
+      - "Cast"
+      # Notifications
+      - "Notification"
+      - "Alert"
+      - "Info"
+      - "Error"
+      # Actions
+      - "Play"
+      - "Pause"
+      - "Stop"
+      - "Settings"
+      - "More"
+      - "Check"
+      - "Close"
+      - "Add"
+      - "Remove"
+      # Sensors
+      - "Temperature"
+      - "Smoke"
+      - "CO2"
+      # Time
+      - "Clock"
+      - "Timer"
+      - "Alarm Clock"
+      - "Calendar"
+      - "Schedule"
+      # Entertainment
+      - "Gaming"
+      - "Movie"
+      - "Sports"
+      - "Book"
+      - "Photo"
+      # Utilities
+      - "Trash"
+      - "Recycle"
+      - "Filter"
+      - "Tools"
+      - "Repair"
+    on_value:
+      then:
+        - component.update: display_1
