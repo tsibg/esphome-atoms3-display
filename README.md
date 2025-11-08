@@ -53,6 +53,6 @@ To get started with this project, you will need to have ESPHome installed.
 ## Resources
 
 - **ESPHome:** [https://esphome.io/](https://esphome.io/)
-- **M5Stack AtomS3:** [https://shop.m5stack.com/products/atoms3-esp32s3-dev-kit](https://shop.m5stack.com/products/atoms3-esp32s3-dev-kit)
+- **M5Stack AtomS3:** [https://shop.m5stack.com/products/atoms3-dev-kit-w-0-85-inch-screen](https://shop.m5stack.com/products/atoms3-dev-kit-w-0-85-inch-screen)
 - **Material Design Icons:** The icons used in this project are from the Material Design Icons [Google Material Icons](https://fonts.google.com/icons).
 - AI for speed ;)
