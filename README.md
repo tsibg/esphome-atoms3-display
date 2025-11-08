@@ -3,7 +3,7 @@ Display any text on the AtomS3 display!
 
 This project provides an ESPHome configuration for the M5Stack AtomS3, allowing you to show your devices' statuses on the display. You can dynamically change the text, icon, and background color.
 
-![AtomS3 Display](img/atoms3-display.png)
+![AtomS3 Display](img/atoms3-display.jpg)
 ![Home Assistant Controls](img/home-assistant-controls.png)
 
 ## Features
