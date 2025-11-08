@@ -54,5 +54,5 @@ To get started with this project, you will need to have ESPHome installed.
 
 - **ESPHome:** [https://esphome.io/](https://esphome.io/)
 - **M5Stack AtomS3:** [https://shop.m5stack.com/products/atoms3-esp32s3-dev-kit](https://shop.m5stack.com/products/atoms3-esp32s3-dev-kit)
-- **Material Design Icons:** The icons used in this project are from the Material Design Icons collection. You can find a list of available icons at [https://pictogrammers.com/library/mdi/](https://pictogrammers.com/library/mdi/). The font is sourced from the [MaterialDesign-Webfont GitHub repository](https://github.com/Templarian/MaterialDesign-Webfont).
+- **Material Design Icons:** The icons used in this project are from the Material Design Icons [Google Material Icons](https://fonts.google.com/icons).
 - AI for speed ;)
