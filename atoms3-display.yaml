@@ -24,6 +24,8 @@ logger:
 api:
 web_server:
   port: 80
+captive_portal:  # This component automatically enables OTA
+
 ota:
   platform: esphome
 
@@ -285,6 +287,8 @@ select:
       - "Filter"
       - "Tools"
       - "Repair"
+      # Finance
+      - "Stock"
     on_value:
       then:
         - component.update: display_1

@@ -123,3 +123,5 @@
     - "\U0000e152"  # filter_list
     - "\U0000e869"  # build
     - "\U0000f100"  # home_repair_service
+    # Finance
+    - "\U0000e6e1"  # show_chart

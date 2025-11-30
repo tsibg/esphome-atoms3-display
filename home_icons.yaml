@@ -175,3 +175,8 @@
 "Filter": "\U0000e152"            # filter_list
 "Tools": "\U0000e869"             # build
 "Repair": "\U0000f100"            # home_repair_service
+
+# ============================================
+# FINANCE
+# ============================================
+"Stock": "\U0000e6e1"             # show_chart
